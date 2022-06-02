@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:cleaning_hup/Screens/Client/add_order.dart';
+import 'package:cleaning_hup/Screens/Client/client_sub_category.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
@@ -23,9 +23,9 @@ class ClientHome extends StatelessWidget {
     Uri _sliderUrl =
         Uri.parse('https://cleaning.3m-erp.com/khadamaty/api/slider');
     Uri _categoriesUrl =
-        //Uri.parse('https://cleaning.3m-erp.com/khadamaty/api/categories');
-        Uri.parse(
-            'https://cleaning.3m-erp.com/khadamaty/api/all-sub-categories/2');
+        Uri.parse('https://cleaning.3m-erp.com/khadamaty/api/categories');
+        // Uri.parse(
+        //     'https://cleaning.3m-erp.com/khadamaty/api/all-sub-categories/2');
     Uri _bestTechUrl =
         Uri.parse('https://cleaning.3m-erp.com/khadamaty/api/best-technicals');
 
@@ -143,7 +143,7 @@ class ClientHome extends StatelessWidget {
                             onTap: () {
                               Navigator.of(context)
                                   .push(MaterialPageRoute(builder: (_) {
-                                return AddOrder(
+                                return ClientSubCategory(
                                   token: token,
                                   id: _categoriesData['data'][n]['id'],
                                 );
@@ -180,7 +180,7 @@ class ClientHome extends StatelessWidget {
                             onTap: () {
                               Navigator.of(context)
                                   .push(MaterialPageRoute(builder: (_) {
-                                return AddOrder(
+                                return ClientSubCategory(
                                   token: token,
                                   id: _categoriesData['data'][n]['id'],
                                 );
